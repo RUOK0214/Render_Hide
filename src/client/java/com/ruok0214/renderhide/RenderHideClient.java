@@ -78,10 +78,14 @@ implements ClientModInitializer {
 
     public void onInitializeClient() {
         net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientChunkEvents.CHUNK_UNLOAD.register(
-                (level, chunk) -> MovingPistonStates.removeChunk(level, chunk.getPos()));
+                (level, chunk) -> {
+                    MovingPistonStates.removeChunk(level, chunk.getPos());
+                    ChangedBlockReveal.removeChunk(level, chunk.getPos());
+                });
         net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents.DISCONNECT.register(
-                (handler, client) -> MovingPistonStates.useLevel(null));
+                (handler, client) -> { MovingPistonStates.useLevel(null); ChangedBlockReveal.reset(null); });
         RegionManager.load();
+        ChangedBlockReveal.load();
         SelectionOverlayRenderer.register();
         this.registerKeys();
         this.registerCommands();
@@ -103,6 +107,7 @@ implements ClientModInitializer {
 
     private void onTick(Minecraft client) {
         RegionManager.updateDimension(client);
+        ChangedBlockReveal.tick(client);
         while (toggleKey.consumeClick()) {
             RegionManager.toggleGlobal();
         }

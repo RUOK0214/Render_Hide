@@ -116,7 +116,10 @@ extends Screen {
         this.addRenderableWidget(Button.builder((Component)Component.literal((String)"Edit coords"), b -> {
             this.editingSelection = true;
             this.rebuild();
-        }).bounds(left, 107, panelWidth, 20).build());
+        }).bounds(left, 107, columnWidth, 20).build());
+        this.addRenderableWidget(Button.builder(Component.translatable("renderhide.changed.title"), b ->
+                net.minecraft.client.Minecraft.getInstance().setScreenAndShow(new ChangedBlockRevealScreen(this)))
+                .bounds(left + columnWidth + gap, 107, columnWidth, 20).build());
         this.regionName = new EditBox(this.font, left, 143, panelWidth - 64, 20, (Component)Component.literal((String)"Region name"));
         this.regionName.setMaxLength(32);
         this.regionName.setHint((Component)Component.literal((String)"region name"));

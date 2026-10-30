@@ -217,6 +217,7 @@ public final class RegionManager {
         String dimension = client.level == null ? "" : client.level.dimension().identifier().toString();
         if (selectionLevel != client.level || !dimension.equals(activeDimension)) {
             MovingPistonStates.useLevel(client.level);
+            ChangedBlockReveal.reset(client.level);
             selectionLevel = client.level;
             clearSelection();
             activeDimension = dimension;
@@ -434,6 +435,7 @@ public final class RegionManager {
         boolean inside = false;
         String dimension = activeDimension;
         for (BlockPos pos : positions) {
+            if (pos != null && ChangedBlockReveal.isRevealed(pos)) return 1.0f;
             if (pos == null) {
                 continue;
             }
@@ -620,6 +622,7 @@ public final class RegionManager {
     }
 
     private static boolean isVisibleAt(BlockPos pos, BlockState state) {
+        if (ChangedBlockReveal.isRevealed(pos)) return true;
         if (state.is(Blocks.MOVING_PISTON) && RegionManager.isMovingPushedBlockVisible(pos)) {
             return true;
         }

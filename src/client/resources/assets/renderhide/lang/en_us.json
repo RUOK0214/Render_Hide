@@ -8,5 +8,10 @@
   "key.renderhide.virtual_light": "Toggle virtual light",
   "key.renderhide.gui": "Open Render Hide menu",
   "modmenu.descriptionTranslation.renderhide": "Hide blocks and entities in selected regions or adjust their opacity. Filtered types remain visible. World blocks and redstone behavior are unchanged.\n\nH: Settings · F9/F10: Select corners · F7: Save region · F8: Toggle all\n\nKnown limitations: Item frames and some touching faces may render incorrectly. Region settings are shared across worlds.",
-  "modmenu.summaryTranslation.renderhide": "Hide blocks and entities in selected regions or adjust their opacity."
+  "modmenu.summaryTranslation.renderhide": "Hide blocks and entities in selected regions or adjust their opacity.",
+  "renderhide.changed.title": "Changed blocks",
+  "renderhide.changed.toggle": "Reveal changed blocks: %s",
+  "renderhide.changed.duration": "Hold time (seconds, 0.1–60)",
+  "renderhide.changed.hint": "A new change restarts the timer.",
+  "renderhide.changed.invalid": "Enter a number from 0.1 to 60."
 }

@@ -29,7 +29,8 @@
     "SodiumFluidRendererMixin",
     "SodiumDefaultFluidRendererMixin",
     "SodiumVirtualLightMixin",
-    "SodiumLightDataMixin"
+    "SodiumLightDataMixin",
+    "ChangedBlockRevealMixin"
   ],
   "injectors": {
     "defaultRequire": 1

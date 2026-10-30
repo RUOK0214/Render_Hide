@@ -8,5 +8,10 @@
   "key.renderhide.virtual_light": "버추얼 라이트 켜기/끄기",
   "key.renderhide.gui": "Render Hide 설정 화면 열기",
   "modmenu.descriptionTranslation.renderhide": "지정한 영역의 블록과 엔티티를 숨기거나 불투명도를 조절합니다. 필터에 추가한 종류는 그대로 표시하며, 실제 월드와 레드스톤 동작은 변경하지 않습니다.\n\nH: 설정 · F9/F10: 영역 선택 · F7: 저장 · F8: 전체 켜기/끄기\n\n알려진 제한: 아이템 액자와 일부 접촉면의 표시가 부정확할 수 있으며, 영역 설정은 월드 간 공유됩니다.",
-  "modmenu.summaryTranslation.renderhide": "선택 영역의 블록·엔티티 숨김과 불투명도를 조절합니다."
+  "modmenu.summaryTranslation.renderhide": "선택 영역의 블록·엔티티 숨김과 불투명도를 조절합니다.",
+  "renderhide.changed.title": "변화 블록 투명도 해제",
+  "renderhide.changed.toggle": "변화 블록 표시: %s",
+  "renderhide.changed.duration": "유지 시간 (초, 0.1~60)",
+  "renderhide.changed.hint": "다시 변하면 유지 시간이 갱신됩니다.",
+  "renderhide.changed.invalid": "0.1~60 사이의 숫자를 입력하세요."
 }

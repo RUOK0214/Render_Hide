@@ -24,6 +24,8 @@ jobs:
           cache: gradle
       - name: Test moving piston state publication
         run: python3 scripts/test_moving_piston_states.py
+      - name: Test changed-block reveal
+        run: python3 scripts/test_changed_block_reveal.py
       - name: Build
         run: |
           chmod +x gradlew
